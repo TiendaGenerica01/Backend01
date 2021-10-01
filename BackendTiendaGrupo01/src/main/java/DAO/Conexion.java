@@ -7,7 +7,7 @@ import java.sql.SQLException;
 /*conexion DB local y maria DB*/
 public class Conexion {
 	static String bd="tiendaGenerica01";
-	static String login="root";
+	static String login="data";
 	static String pass="jrsebastian55";
 	static String url="jdbc:mysql://localhost:3306/"+bd;
 	

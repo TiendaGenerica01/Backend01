@@ -21,7 +21,7 @@ public class ProDAO {
 			PreparedStatement consulta=nex.getConnection().prepareStatement("SELECT * FROM proveedores");
 			ResultSet res=consulta.executeQuery();
 			while(res.next()) {
-				int idpro=Integer.parseInt(res.getString("nitproveedor"));
+				Long idpro=(long) Integer.parseInt(res.getString("nitproveedor"));
 				String ciupro=res.getString("ciudad_proveedor");
 				String dirpro=res.getString("direccion_proveedor");
 				String nompro=res.getString("nombre_proveedor");

@@ -1,10 +1,26 @@
 package DTO;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "clientes")
 public class Cliente {
-	private int idcli;
-	private String dircli,mailcli,nomcli,telcli;
+	@Id
+	@Column(name = "cedula_cliente")
+	private Long idcli;
+	@Column(name = "direccion_cliente")
+	private String dircli;
+	@Column(name = "email_cliente")
+	private String mailcli;
+	@Column(name = "nombre_cliente")
+	private String nomcli;
+	@Column(name = "telefono_cliente")
+	private String telcli;
 	
-	public Cliente(int idcli, String dircli, String mailcli, String nomcli, String telcli) {
+	public Cliente(Long idcli, String dircli, String mailcli, String nomcli, String telcli) {
 		super();
 		this.idcli = idcli;
 		this.dircli = dircli;
@@ -13,11 +29,11 @@ public class Cliente {
 		this.telcli = telcli;
 	}
 
-	public int getIdcli() {
+	public Long getIdcli() {
 		return idcli;
 	}
 
-	public void setIdcli(int idcli) {
+	public void setIdcli(Long idcli) {
 		this.idcli = idcli;
 	}
 
@@ -53,5 +69,10 @@ public class Cliente {
 		this.telcli = telcli;
 	}
 	
+	@Override
+    public String toString() {
+        return "Cliente [ID=" + idcli + ", Direccion Cliente=" + dircli + ", Email Cliente=" + mailcli + ", Nombre Cliente=" + nomcli
+                + ", Telefono Cliente =" + telcli + "]";
+    }
 	
 }

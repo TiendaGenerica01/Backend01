@@ -1,11 +1,27 @@
 package DTO;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 //origen datos proyecto
+@Entity
+@Table(name = "usuarios")
 public class Usuario {
-	private int idusu;
-	private String mailusu,nomusu,pass,ario;
+	@Id
+    @Column(name = "cedula_usuario")
+	private Long idusu;
+	@Column(name = "email_usuario")
+	private String mailusu;
+	@Column(name = "nombre_usuario")
+	private String nomusu;
+	@Column(name = "password")
+	private String pass;
+	@Column(name = "usuario")
+	private String ario;
 	
-	public Usuario(int idusu, String mailusu, String nomusu, String pass, String ario) {
+	public Usuario(Long idusu, String mailusu, String nomusu, String pass, String ario) {
 		super();
 		this.idusu = idusu;
 		this.mailusu = mailusu;
@@ -14,10 +30,10 @@ public class Usuario {
 		this.ario = ario;
 		
 	}
-	public int getIdusu() {
+	public Long getIdusu() {
 		return idusu;
 	}
-	public void setIdusu(int idusu) {
+	public void setIdusu(Long idusu) {
 		this.idusu = idusu;
 	}
 	public String getMailusu() {
@@ -45,5 +61,9 @@ public class Usuario {
 		this.ario = ario;
 	}
 	
-	
+	@Override
+    public String toString() {
+        return "Usuario [Cedula Usuario=" + idusu + ", Nombre Usuario=" + nomusu + ", Email Usuario=" + mailusu + ", Password Usuario=" + pass
+                + ", Usuario =" + ario + "]";
+    }
 }

@@ -21,7 +21,7 @@ public class CliDAO {
 					PreparedStatement consulta=nex.getConnection().prepareStatement("SELECT * FROM clientes");
 					ResultSet res=consulta.executeQuery();
 					while(res.next()) {
-						int idcli=Integer.parseInt(res.getString("cedula_cliente"));
+						Long idcli=(long) Integer.parseInt(res.getString("cedula_cliente"));
 						String dircli=res.getString("direccion_cliente");
 						String mailcli=res.getString("email_cliente");
 						String nomcli=res.getString("nombre_cliente");

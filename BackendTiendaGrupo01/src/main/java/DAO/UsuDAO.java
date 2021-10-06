@@ -21,7 +21,7 @@ public class UsuDAO {
 				PreparedStatement consulta=nex.getConnection().prepareStatement("SELECT * FROM usuarios");
 				ResultSet res=consulta.executeQuery();
 				while(res.next()) {
-					int idusu=Integer.parseInt(res.getString("cedula_usuario"));
+					Long idusu=(long) Integer.parseInt(res.getString("cedula_usuario"));
 					String mailusu=res.getString("email_usuario");
 					String nomusu=res.getString("nombre_usuario");
 					String pass=res.getString("password");

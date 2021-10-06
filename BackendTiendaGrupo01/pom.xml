@@ -12,7 +12,7 @@
 	<artifactId>BackendGrupo01</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>BackendGrupo01</name>
-	<description>Proyecto desarrollo de software</description>
+	<description>Proyecto desarrollo de software grupo 01</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

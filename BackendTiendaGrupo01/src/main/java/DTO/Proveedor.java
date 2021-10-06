@@ -1,10 +1,26 @@
 package DTO;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="proveedores")
 public class Proveedor {
-	private int idpro;
-	private String ciupro,dirpro,nompro,telpro;
+	@Id
+    @Column(name="nitproveedor")
+	private Long idpro;
+	@Column(name="ciudad_proveedor")
+	private String ciupro;
+	@Column(name="direccion_proveedor")
+	private String dirpro;
+	@Column(name="nombre_proveedor")
+	private String nompro;
+	@Column(name="telefono_proveedor")
+	private String telpro;
 	
-	public Proveedor(int idpro, String ciupro, String dirpro, String nompro, String telpro) {
+	public Proveedor(Long idpro, String ciupro, String dirpro, String nompro, String telpro) {
 		super();
 		this.idpro = idpro;
 		this.ciupro = ciupro;
@@ -12,10 +28,10 @@ public class Proveedor {
 		this.nompro = nompro;
 		this.telpro = telpro;
 	}
-	public int getIdpro() {
+	public Long getIdpro() {
 		return idpro;
 	}
-	public void setIdpro(int idpro) {
+	public void setIdpro(Long idpro) {
 		this.idpro = idpro;
 	}
 	public String getCiupro() {
@@ -43,5 +59,9 @@ public class Proveedor {
 		this.telpro = telpro;
 	}
 	
-	
+	@Override
+    public String toString() {
+        return "Proveedor [Ciudad Proveedor=" + ciupro + ", Direccion Proveedor=" + dirpro + ", Nombre Proveedor=" + nompro
+                + ", Telefono Proveedor=" + telpro + "]";
+    }  
 }
